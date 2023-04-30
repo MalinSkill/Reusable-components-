@@ -31,7 +31,7 @@ const LoaderSpan = styled.span`
 `
 const AnimatedP = styled.p`
     /* font-family: 'Audiowide', cursive;  */
-    color: white;
+    color: ${(props) => props.color};
     font-size: 28px;  
     padding-top: 5px;     
     padding-bottom: 5px;     
@@ -48,11 +48,11 @@ const AnimatedP = styled.p`
      @keyframes blink-caret { from, to { border-color: transparent }  50% { border-color: white;}}
 `
 
-export const Loader = ({ loaderColor }) => {
+export const Loader = ({ loaderColor, textColor }) => {
   return (
     <LoaderWrapper>
       <LoaderSpan color={loaderColor} />
-      <AnimatedP>Loading...</AnimatedP>
+      <AnimatedP color={textColor}>Loading...</AnimatedP>
     </LoaderWrapper>
   )
 }
